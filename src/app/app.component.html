@@ -1,0 +1,27 @@
+
+<app-lista></app-lista>
+
+<div class="header pt-2 pb-3">  
+  <h1 class="text-center">Angular 2 simple Reddit</h1>
+  <hr>
+</div>
+<div class ="container mt-5">
+  <form class="form card-body" style="background-color: #e8f9fc; border-radius: 20px;">
+    <h3 class="ui header">Add link</h3>
+  
+    <div class="field form-group">
+      <label for="title"  class="label">Titulo</label>
+      <input name="title" id="title" class="form-control" #newtitle>
+    </div>
+  
+    <div class="field form-group">
+      <label for="link">Link:</label>
+      <input name="link" id="link" class="form-control" #newlink>
+    </div>
+    <button (click)="addArticle(newtitle, newlink)" class="btn btn-primary">submit link</button>
+  </form>
+
+  <div class="container">
+    <app-article *ngFor="let artitle of ordenarArticulos()" [artitle]="artitle" ></app-article>
+  </div>
+</div>
